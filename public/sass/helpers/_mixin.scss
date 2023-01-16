@@ -1,0 +1,31 @@
+// font-weight
+@mixin fw-700 {
+  font-weight: 700;
+}
+
+@mixin fw-400 {
+  font-weight: 400;
+}
+
+// line-height
+@mixin lineHeight-140 {
+  line-height: 140%;
+
+}
+@mixin lineHeight-125 {
+  line-height: 125%;
+}
+
+// font (size, weight)
+@mixin f-s14w500 {
+  font: {
+    size: 14px;
+    weight: 500;
+  }
+}
+
+// m -> font-weight: 500
+@mixin f-14m {
+  @include f-s14w500;
+  line-height: 150%;
+}

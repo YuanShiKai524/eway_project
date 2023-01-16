@@ -24,6 +24,13 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off', // 关闭click事件要求有对应键盘事件
     'no-bitwise': 'off', // 不让用位操作符，不知道为啥，先关掉
     'no-console': 'off',
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
   overrides: [
     {
