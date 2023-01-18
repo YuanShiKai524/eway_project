@@ -31,6 +31,14 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: false,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
   },
   overrides: [
     {

@@ -1,0 +1,19 @@
+.paragraph, .title {
+  display: flex;
+  align-items: center;
+}
+.paragraph {
+  flex-direction: column;
+
+  .title {
+    flex-direction: row;
+  }
+
+  h5, li {
+    color: $primaryColor1;
+  }
+  
+  ol {
+    padding-left: 16px;
+  }
+}
