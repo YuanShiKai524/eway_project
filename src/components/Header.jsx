@@ -7,7 +7,6 @@ const Header = () => {
         <h2>There is no one</h2>
         <h2>who loves pain</h2>
       </div>
-      <div className="whiteWave" />
     </div>
   );
 };

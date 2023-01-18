@@ -14,6 +14,7 @@ body {
   @include fw-400;
   @include lineHeight-140;
   background-color: $primaryColor4;
+  min-width: 414px;
 }
 
 h1,
