@@ -34,9 +34,19 @@ const Header = () => {
         <h2>who loves pain</h2>
       </div>
       <div className="btn-goToForm">
-        <img src="/assets/images/buttons/form.png" alt="go-to-form" />
+        <img src="/assets/images/form.svg" alt="go-to-form" />
       </div>
       <div className="paragraphs-container">
+        <div className="supBubble-container">
+          <img
+            src="/assets/images/小泡泡.svg"
+            alt="小泡泡"
+            className="bubble-sm"
+          />
+          <img src="/assets/images/泡泡.svg" alt="泡泡" className="bubble" />
+          <img src="/assets/images/sup.svg" alt="sup" className="sup" />
+          <img src="/assets/images/船槳.svg" alt="船槳" className="oar" />
+        </div>
         {paragraphs.map((content, index) =>
           index !== paragraphs.length - 1 ? (
             <Paragraph key={nanoid()} contents={content} />

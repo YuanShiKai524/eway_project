@@ -109,7 +109,7 @@ input {
 }
 
 .header-container {
-  background-image: url("/assets/images/白色海浪.png"), url("/assets/images/底色.png");
+  background-image: url("/assets/images/白色海浪.svg"), url("/assets/images/底色.svg");
   background-position: center;
   background-size: 350% 85%;
   background-repeat: no-repeat, no-repeat;
@@ -152,6 +152,31 @@ input {
   position: relative;
   width: 100%;
   max-width: 808px;
+}
+
+.supBubble-container,
+.sup,
+.oar,
+.bubble-sm,
+.bubble {
+  position: absolute;
+}
+
+.supBubble-container {
+  top: -28px;
+  right: 70px;
+}
+.supBubble-container .oar {
+  top: 10px;
+  left: 20px;
+}
+.supBubble-container .bubble-sm {
+  top: -50px;
+  right: -60px;
+}
+.supBubble-container .bubble {
+  top: -30px;
+  right: -50px;
 }
 
 .paragraph, .title {
