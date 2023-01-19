@@ -134,6 +134,11 @@ input {
 
 .btn-goToForm {
   margin: 10px 0;
+  height: 100px;
+}
+
+.btn-goToForm:hover {
+  cursor: pointer;
 }
 
 .paragraphs-container {
@@ -144,21 +149,29 @@ input {
   flex-direction: column;
   align-items: center;
   padding: 24px 16px;
+  position: relative;
+  width: 100%;
+  max-width: 808px;
 }
 
 .paragraph, .title {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .paragraph {
   flex-direction: column;
+  width: 100%;
 }
 .paragraph .title {
+  align-items: center;
   flex-direction: row;
 }
 .paragraph h5, .paragraph li {
   color: #204379;
+}
+.paragraph h5 {
+  margin: 0 3px;
 }
 .paragraph ol {
   padding-left: 16px;

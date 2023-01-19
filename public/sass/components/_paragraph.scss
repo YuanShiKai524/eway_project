@@ -1,16 +1,22 @@
-.paragraph, .title {
+.paragraph, .title{
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 .paragraph {
   flex-direction: column;
+  width: 100%;
 
   .title {
+    align-items: center;
     flex-direction: row;
   }
 
   h5, li {
     color: $primaryColor1;
+  }
+
+  h5 {
+    margin: 0 3px;
   }
   
   ol {

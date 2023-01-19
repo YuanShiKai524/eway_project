@@ -33,11 +33,9 @@ const Header = () => {
         <h2>There is no one</h2>
         <h2>who loves pain</h2>
       </div>
-      <img
-        className="btn-goToForm"
-        src="/assets/images/buttons/form.png"
-        alt="go-to-form"
-      />
+      <div className="btn-goToForm">
+        <img src="/assets/images/buttons/form.png" alt="go-to-form" />
+      </div>
       <div className="paragraphs-container">
         {paragraphs.map((content, index) =>
           index !== paragraphs.length - 1 ? (
