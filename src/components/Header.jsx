@@ -28,38 +28,53 @@ const Header = () => {
   ];
 
   return (
-    <div className="header-container">
-      <div className="slogan-container">
-        <h2>There is no one</h2>
-        <h2>who loves pain</h2>
-      </div>
-      <div className="btn-goToForm">
-        <img src="/assets/images/form.svg" alt="go-to-form" />
-      </div>
-      <div className="paragraphs-container">
-        <div className="supBubble-container">
-          <img
-            src="/assets/images/小泡泡.svg"
-            alt="小泡泡"
-            className="bubble-sm"
-          />
-          <img src="/assets/images/泡泡.svg" alt="泡泡" className="bubble" />
-          <img src="/assets/images/sup.svg" alt="sup" className="sup" />
-          <img src="/assets/images/船槳.svg" alt="船槳" className="oar" />
+    <>
+      <div className="header-container">
+        <div className="slogan-container">
+          <h2>There is no one</h2>
+          <h2>who loves pain</h2>
         </div>
-        {paragraphs.map((content, index) =>
-          index !== paragraphs.length - 1 ? (
-            <Paragraph key={nanoid()} contents={content} />
-          ) : (
-            <Paragraph
-              key={nanoid()}
-              contents={content}
-              style={{ marginBottom: '0', lineHeight: '180%' }}
+        <div className="btn-goToForm">
+          <img src="/assets/images/form.svg" alt="go-to-form" />
+        </div>
+        <div className="paragraphs-container">
+          <div className="supBubble-container">
+            <img
+              src="/assets/images/小泡泡.svg"
+              alt="小泡泡"
+              className="bubble-sm"
             />
-          )
-        )}
+            <img src="/assets/images/泡泡.svg" alt="泡泡" className="bubble" />
+            <img src="/assets/images/sup.svg" alt="sup" className="sup" />
+            <img src="/assets/images/船槳.svg" alt="船槳" className="oar" />
+          </div>
+          {paragraphs.map((content, index) =>
+            index !== paragraphs.length - 1 ? (
+              <Paragraph key={nanoid()} contents={content} />
+            ) : (
+              <Paragraph
+                key={nanoid()}
+                contents={content}
+                style={{ marginBottom: '0', lineHeight: '180%' }}
+              />
+            )
+          )}
+          <div className="supFirework-container">
+            <img
+              src="/assets/images/sup煙火.svg"
+              alt="sup煙火"
+              className="supFirework"
+            />
+            <img
+              src="/assets/images/煙火.svg"
+              alt="煙火"
+              className="firework"
+            />
+          </div>
+        </div>
       </div>
-    </div>
+      <div className="wave" />
+    </>
   );
 };
 

@@ -4,7 +4,7 @@
   background-image: url('/assets/images/白色海浪.svg'),
     url('/assets/images/底色.svg');
   background-position: center;
-  background-size: 350% 85%;
+  background-size: 350% 80%;
   background-repeat: no-repeat, no-repeat;
   background-color: $primaryColor1;
   display: flex;
@@ -12,7 +12,7 @@
   align-items: center;
   padding: 60px 24px 8px;
   width: 100%;
-  height: 793px; // 暫定height
+  min-height: 584px; // 暫定height
 }
 
 .slogan-container > h2 {
@@ -52,7 +52,10 @@
 .sup,
 .oar,
 .bubble-sm,
-.bubble {
+.bubble,
+.supFirework-container,
+.supFirework,
+.firework {
   position: absolute;
 }
 
@@ -74,4 +77,24 @@
     top: -30px;
     right: -50px;
   }
+}
+
+.supFirework-container {
+  bottom: 31px;
+  left: 8px;
+
+  .firework {
+    top: 20px;
+    left: -28px;
+  }
+}
+
+.wave {
+  height: 110px;
+  background-image: url('/assets/images/海浪.svg'), linear-gradient(to bottom, $primaryColor1 50%, $primaryColor4 50%);
+  background-repeat: repeat-x;
+  background-position-y: bottom;
+  overflow: hidden;
+  box-sizing: unset;
+  padding-top: 40px;
 }
