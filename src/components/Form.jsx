@@ -11,6 +11,12 @@ const Form = () => {
   return (
     <div className="formComponent-container">
       <form id="myForm" method="post" onSubmit={handleSubmit}>
+        <div className="formTitle-container">
+          <div>
+            <h5>ＦＯＲＭ</h5>
+          </div>
+          <img src="/assets/images/turtle.svg" alt="turtle" />
+        </div>
         <label htmlFor="store">
           <div>
             store&nbsp;
@@ -22,7 +28,6 @@ const Form = () => {
             placeholder="store7"
             onChange={handleChange}
           />
-          {/* <img src="/assets/images/drop down.svg" alt="drop down" /> */}
         </label>
         <datalist id="stores">
           <option aria-label="store1" value="store1" />
@@ -83,7 +88,6 @@ const Form = () => {
             defaultValue="digital payment"
             onChange={handleChange}
           />
-          {/* <img src="/assets/images/drop down.svg" alt="drop down" /> */}
         </label>
         <datalist id="payments">
           <option aria-label="digital payment" value="digital payment" />

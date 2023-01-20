@@ -12,20 +12,60 @@ input {
   padding: 67.46px 24px 0 24px;
 }
 
-form {
+form,
+.formTitle-container > div {
   border: 2px solid $primaryColor2;
+  background: $white;
+}
+
+form {
+  width: 100%;
+  max-width: 808px;
   border-radius: 16px;
   box-shadow: 0px 1px 20px rgba(73, 72, 72, 0.25);
-  background: $white;
   padding: 40px 20px;
   margin-bottom: 30px;
   gap: 20px;
+  position: relative;
+  align-self: center;
+
+  .formTitle-container,
+  .formTitle-container div,
+  .formTitle-container img {
+    position: absolute;
+  }
+
+  .formTitle-container {
+    top: -25px;
+    left: calc(50% - (100px * 2 / 3));
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 123px;
+      height: 43px;
+      padding: 10px 15px;
+      box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
+      border-radius: 50px;
+      color: $primaryColor2;
+
+      h5 {
+        letter-spacing: 0.2em;
+      }
+    }
+
+    img {
+      top: -10px;
+      left: 100px;
+    }
+  }
 
   label {
     position: relative;
 
-    &:first-child > input,
-    &:nth-child(6) > input {
+    &:nth-child(2) > input,
+    &:nth-child(7) > input {
       background-image: url('/assets/images/drop down.svg');
       background-repeat: no-repeat;
       background-position: 97% 49%;
@@ -57,12 +97,6 @@ form {
         display: none !important;
       }
     }
-
-    // img {
-    //   position: absolute;
-    //   top: calc(50% + 1px);
-    //   right: 10px;
-    // }
   }
 }
 

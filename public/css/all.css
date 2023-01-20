@@ -242,19 +242,54 @@ input {
   padding: 67.46px 24px 0 24px;
 }
 
-form {
+form,
+.formTitle-container > div {
   border: 2px solid #B57556;
+  background: #FFFFFF;
+}
+
+form {
+  width: 100%;
+  max-width: 808px;
   border-radius: 16px;
   box-shadow: 0px 1px 20px rgba(73, 72, 72, 0.25);
-  background: #FFFFFF;
   padding: 40px 20px;
   margin-bottom: 30px;
   gap: 20px;
+  position: relative;
+  align-self: center;
+}
+form .formTitle-container,
+form .formTitle-container div,
+form .formTitle-container img {
+  position: absolute;
+}
+form .formTitle-container {
+  top: -25px;
+  left: calc(50% - 66.6666666667px);
+}
+form .formTitle-container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 123px;
+  height: 43px;
+  padding: 10px 15px;
+  box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
+  border-radius: 50px;
+  color: #B57556;
+}
+form .formTitle-container div h5 {
+  letter-spacing: 0.2em;
+}
+form .formTitle-container img {
+  top: -10px;
+  left: 100px;
 }
 form label {
   position: relative;
 }
-form label:first-child > input, form label:nth-child(6) > input {
+form label:nth-child(2) > input, form label:nth-child(7) > input {
   background-image: url("/assets/images/drop down.svg");
   background-repeat: no-repeat;
   background-position: 97% 49%;
