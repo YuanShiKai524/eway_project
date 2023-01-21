@@ -1,4 +1,5 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 
 const Form = () => {
   const handleSubmit = (e) => {
@@ -30,16 +31,13 @@ const Form = () => {
           />
         </label>
         <datalist id="stores">
-          <option aria-label="store1" value="store1" />
-          <option aria-label="store2" value="store2" />
-          <option aria-label="store3" value="store3" />
-          <option aria-label="store4" value="store4" />
-          <option aria-label="store5" value="store5" />
-          <option aria-label="store6" value="store6" />
-          <option aria-label="store7" value="store7" />
-          <option aria-label="store8" value="store8" />
-          <option aria-label="store9" value="store9" />
-          <option aria-label="store10" value="store10" />
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((num) => (
+            <option
+              key={nanoid()}
+              aria-label={`store${num}`}
+              value={`store${num}`}
+            />
+          ))}
         </datalist>
         <label htmlFor="name">
           <div>

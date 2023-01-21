@@ -1,5 +1,18 @@
 @use '../helpers/variables';
 
+// input 基本樣式 (讓一般input與有錯誤時的input共用)
+%input-basic {
+  width: 100%;
+  height: 57px;
+  margin: 4px 0 auto 0;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 16px;
+  gap: 10px;
+  border: 1px solid $primaryColor1;
+  border-radius: 20px;
+}
+
 .formComponent-container,
 form,
 input {
@@ -68,7 +81,15 @@ form {
     &:nth-child(7) > input {
       background-image: url('/assets/images/drop down.svg');
       background-repeat: no-repeat;
-      background-position: 97% 49%;
+      background-position: calc(100% - 18px) 48%;
+      cursor: pointer;
+    }
+
+    &:nth-child(2) > input:focus {
+      background-position: calc(100% - 16px) calc(47.5%);
+    }
+    &:nth-child(7) > input:focus {
+      background-position: calc(100% - 16px) calc(47.8%);
     }
 
     div {
@@ -80,15 +101,13 @@ form {
     }
 
     input {
-      width: 100%;
-      height: 57px;
-      margin: 4px 0 auto 0;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 8px 16px;
-      gap: 10px;
-      border: 1px solid $primaryColor1;
-      border-radius: 20px;
+      @extend %input-basic;
+
+      &:focus {
+        outline: 0;
+        border: 3px solid #93BBF9;
+        padding: 8px 14px;
+      }
 
       &::placeholder {
         color: #bdbdbd;
