@@ -37,7 +37,7 @@ const Header = () => {
         <div className="btn-goToForm">
           <img src="/assets/images/form.svg" alt="go-to-form" />
         </div>
-        <div className="paragraphs-container">
+        <div className="container paragraphs-container">
           <div className="supBubble-container">
             <img
               src="/assets/images/小泡泡.svg"

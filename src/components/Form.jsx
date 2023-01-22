@@ -11,7 +11,12 @@ const Form = () => {
 
   return (
     <div className="formComponent-container">
-      <form id="myForm" method="post" onSubmit={handleSubmit}>
+      <form
+        id="myForm"
+        method="post"
+        className="container"
+        onSubmit={handleSubmit}
+      >
         <div className="formTitle-container">
           <div>
             <h5>ＦＯＲＭ</h5>

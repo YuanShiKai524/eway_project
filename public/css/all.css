@@ -113,6 +113,15 @@ input {
   font-size: 16px;
 }
 
+.container {
+  width: 100%;
+}
+
+@media only screen and (min-width: 856px) {
+  .container {
+    width: 808px;
+  }
+}
 .header-container {
   background-image: url("/assets/images/白色海浪.svg"), url("/assets/images/底色.svg");
   background-position: center;
@@ -155,8 +164,6 @@ input {
   align-items: center;
   padding: 24px 16px;
   position: relative;
-  width: 100%;
-  max-width: 808px;
 }
 
 .supBubble-container,
@@ -261,8 +268,6 @@ form,
 }
 
 form {
-  width: 100%;
-  max-width: 808px;
   border-radius: 16px;
   box-shadow: 0px 1px 20px rgba(73, 72, 72, 0.25);
   padding: 40px 20px;
@@ -336,6 +341,41 @@ button {
   background-color: inherit;
   margin: 0 auto;
   cursor: pointer;
+}
+
+.prize-wrapper,
+.prize-container {
+  justify-content: center;
+}
+
+.prize-wrapper {
+  background-image: url("/assets/images/沙子.svg");
+  padding: 60px 0 45px 0;
+  margin-top: 30px;
+  display: flex;
+}
+
+.prize-container {
+  width: 100%;
+  margin: 0 21px;
+  display: grid;
+  grid-template-columns: 178px 178px;
+  grid-gap: 41px 16px;
+}
+
+@media only screen and (min-width: 630px) {
+  .prize-container {
+    width: 630px;
+    grid-template-columns: 178px 178px 178px;
+  }
+}
+.card-container {
+  position: relative;
+  min-width: 178px;
+  height: 112px;
+  box-shadow: 0px 8px 0px #edeef0;
+  border-radius: 20px;
+  background-color: #FFFFFF;
 }
 
 /*# sourceMappingURL=all.css.map */
