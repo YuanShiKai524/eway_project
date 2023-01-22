@@ -369,6 +369,19 @@ button {
     grid-template-columns: 178px 178px 178px;
   }
 }
+.card-container .quantity-silver, .card-container .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 23px;
+  padding: 3px 10px;
+  border-radius: 50px;
+  top: 18px;
+  right: 8px;
+  background-color: #FAFAFA;
+}
+
 .card-container {
   position: relative;
   min-width: 178px;
@@ -376,6 +389,48 @@ button {
   box-shadow: 0px 8px 0px #edeef0;
   border-radius: 20px;
   background-color: #FFFFFF;
+}
+.card-container .quantity,
+.card-container .quantity-silver,
+.card-container .prize-name,
+.card-container .prize-name-silver,
+.card-container .badge,
+.card-container .prize-level {
+  position: absolute;
+}
+.card-container .quantity,
+.card-container .prize-name {
+  color: #B3B960;
+}
+.card-container .quantity {
+  border: 1px solid #B3B960;
+}
+.card-container .quantity-silver {
+  border: 1px solid #A0BCC8;
+}
+.card-container .quantity-silver,
+.card-container .prize-name-silver {
+  color: #A0BCC8;
+}
+.card-container .badge {
+  top: -25px;
+  left: 32%;
+}
+.card-container .badge .prize-level {
+  top: 22px;
+  left: 27px;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 125%;
+  font-size: 16.916px;
+}
+.card-container .prize-name,
+.card-container .prize-name-silver {
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=all.css.map */
