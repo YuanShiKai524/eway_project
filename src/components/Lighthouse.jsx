@@ -2,7 +2,7 @@ import React from 'react';
 
 const Lighthouse = () => {
   return (
-    <div className="lighthouse-section-wrapper">
+    <div className="section lighthouse-wrapper">
       <div className="lighthouse-words-container">
         <div className="backslash" />
         <div className="lighthouse-words">

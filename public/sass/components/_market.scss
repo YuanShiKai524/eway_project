@@ -1,0 +1,16 @@
+@use '../helpers/variables';
+
+.market-wrapper {
+  background-color: $primaryColor1;
+  padding: 40px 19px;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.market-words {
+  @include fw-700;
+  font-size: 20px;
+  color: $white;
+  line-height: 200%;
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+}

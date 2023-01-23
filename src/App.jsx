@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Form from './components/Form';
 import Prize from './components/Prize';
 import Lighthouse from './components/Lighthouse';
+import Market from './components/Market';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Form />
       <Prize />
       <Lighthouse />
+      <Market />
     </div>
   );
 };

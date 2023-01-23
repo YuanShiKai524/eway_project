@@ -1,3 +1,5 @@
+// 定義通用或全局樣式之scss
+
 @use '../helpers/variables';
 
 @font-face {
@@ -97,4 +99,12 @@ input {
 .btn-lg {
   @extend %btn-shared;
   font-size: 16px;
+}
+
+// section
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }

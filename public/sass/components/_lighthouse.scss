@@ -6,15 +6,14 @@
   height: 81px;
 }
 
-.lighthouse-section-wrapper,
+.lighthouse-wrapper,
 .lighthouse-words {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.lighthouse-section-wrapper {
-  width: 100%;
+.lighthouse-wrapper {
   padding: 40px 24px;
 }
 
