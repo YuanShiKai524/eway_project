@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { nanoid } from 'nanoid';
 import Paragraph from './Paragraph';
 
@@ -27,14 +27,26 @@ const Header = () => {
     ],
   ];
 
+  const headerContainerRef = useRef();
+
+  const scrollToForm = () => {
+    const headerHeight = headerContainerRef.current.offsetHeight;
+    const destination = headerHeight + 175.46;
+    window.scrollTo({
+      top: destination,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <>
-      <div className="header-container">
+      <div className="header-container" ref={headerContainerRef}>
         <div className="slogan-container">
           <h2>There is no one</h2>
           <h2>who loves pain</h2>
         </div>
-        <div className="btn-goToForm">
+        <div className="btn-goToForm" onClick={scrollToForm}>
           <img src="/assets/images/form.svg" alt="go-to-form" />
         </div>
         <div className="container paragraphs-container">
