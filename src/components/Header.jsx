@@ -31,7 +31,7 @@ const Header = () => {
 
   const scrollToForm = () => {
     const headerHeight = headerContainerRef.current.offsetHeight;
-    const destination = headerHeight + 175.46;
+    const destination = headerHeight + 150;
     window.scrollTo({
       top: destination,
       left: 0,
