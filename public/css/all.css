@@ -433,4 +433,43 @@ button {
   justify-content: center;
 }
 
+.lighthouse-words-container .slash, .lighthouse-words-container .backslash {
+  box-sizing: unset;
+  width: 20px;
+  height: 81px;
+}
+
+.lighthouse-section-wrapper,
+.lighthouse-words {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lighthouse-section-wrapper {
+  width: 100%;
+  padding: 40px 24px;
+}
+
+.lighthouse-words-container {
+  display: flex;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+.lighthouse-words-container .backslash {
+  border-left: 1px solid #204379;
+  transform: rotate(-13deg);
+}
+.lighthouse-words-container .slash {
+  border-right: 1px solid #204379;
+  transform: rotate(13deg);
+}
+
+.lighthouse-words h4 {
+  color: #204379;
+}
+.lighthouse-words h4:first-child {
+  color: #B57556;
+}
+
 /*# sourceMappingURL=all.css.map */
