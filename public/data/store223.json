@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "林峰",
+    "phone": "0999111333",
+    "payment": "digital payment"
+  },
+  {
+    "id": 2,
+    "name": "Johnson Wicky",
+    "phone": "0973255611",
+    "payment": "ATM"
+  },
+  {
+    "id": 3,
+    "name": "Robinson Quin",
+    "phone": "0961788322",
+    "payment": "digital payment"
+  },
+  {
+    "id": 4,
+    "name": "聶雲",
+    "phone": "0985666000",
+    "payment": "ATM"
+  },
+  {
+    "id": 5,
+    "name": "Taylor Allen",
+    "phone": "0948123321",
+    "payment": "digital payment"
+  }
+]

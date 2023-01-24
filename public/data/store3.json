@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Hall Ray",
+    "phone": "0933657839",
+    "payment": "digital payment"
+  },
+  {
+    "id": 2,
+    "name": "Hughes Mario",
+    "phone": "0920555444",
+    "payment": "ATM"
+  },
+  {
+    "id": 3,
+    "name": "Davies David",
+    "phone": "0966235987",
+    "payment": "digital payment"
+  },
+  {
+    "id": 4,
+    "name": "李強",
+    "phone": "0915876954",
+    "payment": "ATM"
+  },
+  {
+    "id": 5,
+    "name": "張三",
+    "phone": "0923833755",
+    "payment": "digital payment"
+  }
+]

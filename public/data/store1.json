@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Thomas Jimmy",
+    "phone": "0967588922",
+    "payment": "digital payment"
+  },
+  {
+    "id": 2,
+    "name": "羅志清",
+    "phone": "0912445778",
+    "payment": "ATM"
+  },
+  {
+    "id": 3,
+    "name": "風步輕",
+    "phone": "0908211233",
+    "payment": "digital payment"
+  },
+  {
+    "id": 4,
+    "name": "白小倩",
+    "phone": "0967555333",
+    "payment": "ATM"
+  },
+  {
+    "id": 5,
+    "name": "Thompson Lean",
+    "phone": "0922456098",
+    "payment": "digital payment"
+  }
+]

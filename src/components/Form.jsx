@@ -31,12 +31,12 @@ const Form = () => {
           <input
             list="stores"
             name="store"
-            placeholder="store7"
+            placeholder="store2"
             onChange={handleChange}
           />
         </label>
         <datalist id="stores">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((num) => (
+          {[1, 2, 3, 113, 223].map((num) => (
             <option
               key={nanoid()}
               aria-label={`store${num}`}
