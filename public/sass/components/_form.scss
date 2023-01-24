@@ -76,7 +76,7 @@ form {
     position: relative;
 
     &:nth-child(2) > input,
-    &:nth-child(7) > input {
+    &:nth-child(6) > input {
       background-image: url('/assets/images/drop down.svg');
       background-repeat: no-repeat;
       background-position: calc(100% - 18px) 48%;
@@ -113,6 +113,12 @@ form {
       &::-webkit-calendar-picker-indicator {
         display: none !important;
       }
+    }
+
+    .errMsg {
+      color: $alertColor;
+      position: absolute;
+      top: 85px;
     }
   }
 }
