@@ -11,19 +11,69 @@ const Form = () => {
     payment: { value: 'digital payment', errMsg: '', invaild: false },
   });
 
-  // 此函數用於更改invaild的boolean值
-  const toggleInvaild = (type, event) => {
+  // 定義store欄位及payment欄位的options，便於使用
+  const storeOptions = ['store1', 'store2', 'store3', 'store113', 'store223'];
+  const paymentOptions = ['digital payment', 'ATM'];
+
+  // 檢查store中用戶的輸入值，返回過濾結果
+  const checkStore = (event) => {
+    const results = storeOptions.filter((option) => {
+      return option.indexOf(event.target.value) !== -1;
+    });
+    return results;
+  };
+
+  // 此函數(onChange事件函數)用於更改inputs狀態
+  const handleChange = (type, event) => {
     if (event.target.value === '') {
-      setInputs({
-        ...inputs,
-        [type]: { ...inputs[type], value: event.target.value },
-      });
+      if (type === 'store') {
+        setInputs({
+          ...inputs,
+          [type]: { value: event.target.value, errMsg: '', invaild: false },
+        });
+      }
+      if (type !== 'store') {
+        setInputs({
+          ...inputs,
+          [type]: { ...inputs[type], value: event.target.value },
+        });
+      }
     }
     if (event.target.value !== '') {
-      setInputs({
-        ...inputs,
-        [type]: { ...inputs[type], value: event.target.value, invaild: false },
-      });
+      // 若store欄位中有輸入值，則檢查輸入的值是否有在options中
+      if (type === 'store') {
+        const results = checkStore(event);
+        if (results.length === 0) {
+          setInputs({
+            ...inputs,
+            [type]: {
+              value: event.target.value,
+              errMsg: 'no result',
+              invaild: true,
+            },
+          });
+        }
+        if (results.length !== 0) {
+          setInputs({
+            ...inputs,
+            [type]: {
+              value: event.target.value,
+              errMsg: '',
+              invaild: false,
+            },
+          });
+        }
+      }
+      if (type !== 'store') {
+        setInputs({
+          ...inputs,
+          [type]: {
+            value: event.target.value,
+            errMsg: '',
+            invaild: false,
+          },
+        });
+      }
     }
   };
 
@@ -33,35 +83,35 @@ const Form = () => {
       label: 'store',
       name: 'store',
       placeholder: 'store2',
-      onChange: (event) => toggleInvaild('store', event),
+      onChange: (event) => handleChange('store', event),
       list: 'stores',
-      options: ['store1', 'store2', 'store3', 'store113', 'store223'],
+      options: storeOptions,
     },
     {
       label: 'name',
       name: 'name',
       placeholder: 'John Doe',
-      onChange: (event) => toggleInvaild('name', event),
+      onChange: (event) => handleChange('name', event),
     },
     {
       label: 'phone',
       name: 'phone',
       placeholder: '0910777888',
-      onChange: (event) => toggleInvaild('phone', event),
+      onChange: (event) => handleChange('phone', event),
     },
     {
       label: 'Amount of consumption',
       name: 'consumption',
       placeholder: '10000',
-      onChange: (event) => toggleInvaild('consumption', event),
+      onChange: (event) => handleChange('consumption', event),
     },
     {
       label: 'payment',
       name: 'payment',
       defaultValue: 'digital payment',
-      onChange: (event) => toggleInvaild('payment', event),
+      onChange: (event) => handleChange('payment', event),
       list: 'payments',
-      options: ['digital payment', 'ATM'],
+      options: paymentOptions,
     },
   ];
 
