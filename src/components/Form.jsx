@@ -74,6 +74,7 @@ const Form = () => {
         <>
           {field.label === 'store' ? (
             <input
+              className={field.invalid ? 'error' : ''}
               list={field.list}
               name={field.label}
               placeholder={field.placeholder}
@@ -81,6 +82,7 @@ const Form = () => {
             />
           ) : (
             <input
+              className={field.invalid ? 'error' : ''}
               list={field.list}
               name={field.label}
               defaultValue={field.defaultValue}
@@ -99,6 +101,7 @@ const Form = () => {
     }
     return (
       <input
+        className={field.invalid ? 'error' : ''}
         name={field.label}
         placeholder={field.placeholder}
         onChange={field.onChange}

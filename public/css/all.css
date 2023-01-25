@@ -333,7 +333,7 @@ form label div span {
 }
 form label input:focus {
   outline: 0;
-  border: 3px solid #93BBF9;
+  border: 3px solid #93bbf9;
   padding: 8px 14px;
 }
 form label input::placeholder {
@@ -346,6 +346,12 @@ form label .errMsg {
   color: #E06D6D;
   position: absolute;
   top: 85px;
+}
+
+.error {
+  outline: 0;
+  border: 3px solid #E06D6D;
+  padding: 8px 14px;
 }
 
 button {
