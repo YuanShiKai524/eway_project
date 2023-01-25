@@ -39,6 +39,12 @@ module.exports = {
         peerDependencies: false,
       },
     ],
+    'no-restricted-syntax': [
+      'error',
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
+    ],
   },
   overrides: [
     {

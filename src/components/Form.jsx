@@ -2,79 +2,99 @@ import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 
 const Form = () => {
-  const [store, setStore] = useState('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [consumption, setConsumption] = useState('');
-  const [payment, setPayment] = useState('digital payment');
+  // 所有input輸入框的狀態
+  const [inputs, setInputs] = useState({
+    store: { value: '', errMsg: '', invaild: false },
+    name: { value: '', errMsg: '', invaild: false },
+    phone: { value: '', errMsg: '', invaild: false },
+    consumption: { value: '', errMsg: '', invaild: false },
+    payment: { value: 'digital payment', errMsg: '', invaild: false },
+  });
 
-  const [fields, setFields] = useState([
+  // 此函數用於更改invaild的boolean值
+  const toggleInvaild = (type, event) => {
+    if (event.target.value === '') {
+      setInputs({
+        ...inputs,
+        [type]: { ...inputs[type], value: event.target.value },
+      });
+    }
+    if (event.target.value !== '') {
+      setInputs({
+        ...inputs,
+        [type]: { ...inputs[type], value: event.target.value, invaild: false },
+      });
+    }
+  };
+
+  // 各輸入欄位的資料及其props的值 (為了方便遍歷，統整成一個array)
+  const fields = [
     {
       label: 'store',
+      name: 'store',
       placeholder: 'store2',
-      onChange: (event) => setStore(event.target.value),
+      onChange: (event) => toggleInvaild('store', event),
       list: 'stores',
       options: ['store1', 'store2', 'store3', 'store113', 'store223'],
-      errMsg: '',
-      invalid: false,
     },
     {
       label: 'name',
+      name: 'name',
       placeholder: 'John Doe',
-      onChange: (event) => setName(event.target.value),
-      errMsg: '',
-      invalid: false,
+      onChange: (event) => toggleInvaild('name', event),
     },
     {
       label: 'phone',
+      name: 'phone',
       placeholder: '0910777888',
-      onChange: (event) => setPhone(event.target.value),
-      errMsg: '',
-      invalid: false,
+      onChange: (event) => toggleInvaild('phone', event),
     },
     {
       label: 'Amount of consumption',
+      name: 'consumption',
       placeholder: '10000',
-      onChange: (event) => setConsumption(event.target.value),
-      errMsg: '',
-      invalid: false,
+      onChange: (event) => toggleInvaild('consumption', event),
     },
     {
       label: 'payment',
+      name: 'payment',
       defaultValue: 'digital payment',
-      onChange: (event) => setPayment(event.target.value),
+      onChange: (event) => toggleInvaild('payment', event),
       list: 'payments',
       options: ['digital payment', 'ATM'],
-      errMsg: '',
-      invalid: false,
     },
-  ]);
+  ];
+
+  // 用於提交後，檢查是否欄位為空值的函數
+  const checkEmptyInput = () => {
+    const newInputs = {};
+    for (const [key, valObj] of Object.entries(inputs)) {
+      if (valObj.value === '') {
+        newInputs[key] = { ...valObj, errMsg: 'required', invaild: true };
+      }
+      if (valObj.value !== '') {
+        newInputs[key] = valObj;
+      }
+    }
+    return newInputs;
+  };
 
   // 處理提交的函數
   const handleSubmit = (e) => {
     e.preventDefault();
     // 驗證輸入欄錯誤有以下幾種情況: 該填未填required, 各state的wrong format
-    const states = [store, name, phone, consumption, payment];
-    const newFields = fields.map((field, index) => {
-      if (states[index].trim() === '') {
-        return { ...field, errMsg: 'required', invalid: true };
-      }
-      if (states[index].trim() !== '' && field.errMsg !== '') {
-        return { ...field, errMsg: '', invalid: false };
-      }
-      return field;
-    });
-    setFields(newFields);
+    const newInputs = checkEmptyInput();
+    setInputs(newInputs);
   };
 
-  // 此函數用於獲取輸入欄的html元素(包括其props)
+  // 此函數用於獲取輸入欄的html元素(包括其props)去遍歷，並渲染至頁面上
   const getElements = (field) => {
     if (field.label === 'store' || field.label === 'payment') {
       return (
         <>
           {field.label === 'store' ? (
             <input
-              className={field.invalid ? 'error' : ''}
+              className={inputs[field.name].invaild ? 'error' : ''}
               list={field.list}
               name={field.label}
               placeholder={field.placeholder}
@@ -82,7 +102,7 @@ const Form = () => {
             />
           ) : (
             <input
-              className={field.invalid ? 'error' : ''}
+              className={inputs[field.name].invaild ? 'error' : ''}
               list={field.list}
               name={field.label}
               defaultValue={field.defaultValue}
@@ -101,7 +121,7 @@ const Form = () => {
     }
     return (
       <input
-        className={field.invalid ? 'error' : ''}
+        className={inputs[field.name].invaild ? 'error' : ''}
         name={field.label}
         placeholder={field.placeholder}
         onChange={field.onChange}
@@ -130,12 +150,12 @@ const Form = () => {
               <span>&#042;</span>
             </div>
             {getElements(field)}
-            {field.invalid === false ? (
+            {inputs[field.name].invaild === false ? (
               <div className="caption errMsg" style={{ display: 'none' }}>
-                {field.errMsg}
+                {inputs[field.name].errMsg}
               </div>
             ) : (
-              <div className="caption errMsg">{field.errMsg}</div>
+              <div className="caption errMsg">{inputs[field.name].errMsg}</div>
             )}
           </label>
         ))}
