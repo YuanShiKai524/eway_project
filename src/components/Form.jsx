@@ -26,18 +26,22 @@ const Form = () => {
   // 此函數(onChange事件函數)用於更改inputs狀態
   const handleChange = (type, event) => {
     if (event.target.value === '') {
-      if (type === 'store') {
-        setInputs({
-          ...inputs,
-          [type]: { value: event.target.value, errMsg: '', invaild: false },
-        });
-      }
-      if (type !== 'store') {
-        setInputs({
-          ...inputs,
-          [type]: { ...inputs[type], value: event.target.value },
-        });
-      }
+      setInputs({
+        ...inputs,
+        [type]: { value: event.target.value, errMsg: '', invaild: false },
+      });
+      // if (type === 'store') {
+      //   setInputs({
+      //     ...inputs,
+      //     [type]: { value: event.target.value, errMsg: '', invaild: false },
+      //   });
+      // }
+      // if (type !== 'store') {
+      //   setInputs({
+      //     ...inputs,
+      //     [type]: { ...inputs[type], value: event.target.value },
+      //   });
+      // }
     }
     if (event.target.value !== '') {
       // 若store欄位中有輸入值，則檢查輸入的值是否有在options中
@@ -129,11 +133,30 @@ const Form = () => {
     return newInputs;
   };
 
+  // 提交後，驗證name格式
+  const checkName = (inputsObj) => {
+    const name = inputsObj.name.value;
+    if (name !== '') {
+      const result =
+        /(^[\u4e00-\u9fa5]{2,4}$|^[a-zA-Z]+$|^[a-zA-Z]+[\s]{1}[a-zA-Z]+$)/.test(
+          name
+        );
+      if (!result) {
+        return {
+          ...inputsObj,
+          name: { ...inputsObj.name, errMsg: 'wrong format', invaild: true },
+        };
+      }
+    }
+    return inputsObj;
+  };
+
   // 處理提交的函數
   const handleSubmit = (e) => {
     e.preventDefault();
     // 驗證輸入欄錯誤有以下幾種情況: 該填未填required, 各state的wrong format
-    const newInputs = checkEmptyInput();
+    let newInputs = checkEmptyInput();
+    newInputs = checkName(newInputs);
     setInputs(newInputs);
   };
 
