@@ -1,0 +1,110 @@
+// 定義通用或全局樣式之scss
+
+@use '../helpers/variables';
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('/assets/font/Noto Sans TC.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+  @include fw-400;
+  @include lineHeight-140;
+  background-color: $primaryColor4;
+  min-width: 414px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include fw-700;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  line-height: 125%;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+  @include lineHeight-140;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+input {
+  @include fw-400;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.subtitle {
+  @include lineHeight-140;
+  @include f-s14w500;
+}
+
+.caption {
+  @include fw-400;
+  @include lineHeight-140;
+  font-size: 12px;
+}
+
+.title {
+  @include fw-700;
+  @include lineHeight-140;
+}
+
+.small {
+  @include fw-400;
+  @include lineHeight-140;
+  font-size: 11px;
+}
+
+// button
+%btn-shared {
+  @include fw-700;
+  line-height: 112.5%;
+}
+.btn-sm {
+  @extend %btn-shared;
+  font-size: 12px;
+}
+.btn-md {
+  @extend %btn-shared;
+  font-size: 14px;
+}
+.btn-lg {
+  @extend %btn-shared;
+  font-size: 16px;
+}
+
+// section
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}

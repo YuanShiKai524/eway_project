@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Smith Sherry",
+    "phone": "0977282348",
+    "payment": "digital payment"
+  },
+  {
+    "id": 2,
+    "name": "葉青眉",
+    "phone": "0988666345",
+    "payment": "ATM"
+  },
+  {
+    "id": 3,
+    "name": "Williams Jack",
+    "phone": "0910444321",
+    "payment": "digital payment"
+  },
+  {
+    "id": 4,
+    "name": "Brown Onion",
+    "phone": "0966834565",
+    "payment": "ATM"
+  },
+  {
+    "id": 5,
+    "name": "曾少偉",
+    "phone": "0911345890",
+    "payment": "digital payment"
+  }
+]

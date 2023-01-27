@@ -1,0 +1,76 @@
+@use '../helpers/variables';
+
+// quantity 共用樣式
+%quantity-shared {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 23px;
+  padding: 3px 10px;
+  border-radius: 50px;
+  top: 18px;
+  right: 8px;
+  background-color: $textColor10;
+}
+
+.card-container {
+  position: relative;
+  min-width: $cardWidth;
+  height: 112px;
+  box-shadow: 0px 8px 0px #edeef0;
+  border-radius: 20px;
+  background-color: $white;
+
+  .quantity,
+  .quantity-silver,
+  .prize-name,
+  .prize-name-silver,
+  .badge,
+  .prize-level {
+    position: absolute;
+  }
+
+  .quantity,
+  .prize-name {
+    color: $primaryColor6;
+  }
+
+  .quantity {
+    @extend %quantity-shared;
+    border: 1px solid $primaryColor6;
+  }
+
+  .quantity-silver {
+    @extend %quantity-shared;
+    border: 1px solid $primaryColor7;
+  }
+
+  .quantity-silver,
+  .prize-name-silver {
+    color: $primaryColor7;
+  }
+
+  .badge {
+    top: -25px;
+    left: 32%;
+
+    .prize-level {
+      top: 22px;
+      left: 27px;
+      color: $white;
+      @include fw-700;
+      @include lineHeight-125;
+      font-size: 16.916px;
+    }
+  }
+
+  .prize-name,
+  .prize-name-silver {
+    bottom: 22px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

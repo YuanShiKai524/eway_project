@@ -1,0 +1,98 @@
+@use '../helpers/variables';
+
+.header-container {
+  background-image: url('/assets/images/白色海浪.svg'),
+    url('/assets/images/底色.svg');
+  background-position: center;
+  background-size: 350% 80%;
+  background-repeat: no-repeat, no-repeat;
+  background-color: $primaryColor1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 24px 8px;
+  width: 100%;
+  min-height: 584px; // 暫定height
+}
+
+.slogan-container > h2 {
+  color: $white;
+  letter-spacing: 0.2em;
+
+  &:nth-child(2) {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 4px;
+  }
+}
+
+.btn-goToForm {
+  margin: 10px 0;
+  height: 100px;
+}
+
+.btn-goToForm:hover {
+  cursor: pointer;
+}
+
+.paragraphs-container {
+  background-color: $primaryColor3;
+  border: 2px solid $primaryColor2;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  position: relative;
+}
+
+.supBubble-container,
+.sup,
+.oar,
+.bubble-sm,
+.bubble,
+.supFirework-container,
+.supFirework,
+.firework {
+  position: absolute;
+}
+
+.supBubble-container {
+  top: -28px;
+  right: 70px;
+
+  .oar {
+    top: 10px;
+    left: 20px;
+  }
+
+  .bubble-sm {
+    top: -50px;
+    right: -60px;
+  }
+
+  .bubble {
+    top: -30px;
+    right: -50px;
+  }
+}
+
+.supFirework-container {
+  bottom: 31px;
+  left: 8px;
+
+  .firework {
+    top: 20px;
+    left: -28px;
+  }
+}
+
+.wave {
+  height: 110px;
+  background-image: url('/assets/images/海浪.svg'), linear-gradient(to bottom, $primaryColor1 50%, $primaryColor4 50%);
+  background-repeat: repeat-x;
+  background-position-y: bottom;
+  overflow: hidden;
+  box-sizing: unset;
+  padding-top: 40px;
+}

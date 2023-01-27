@@ -1,0 +1,28 @@
+@use '../helpers/variables';
+
+.prize-wrapper,
+.prize-container {
+  justify-content: center;
+}
+
+.prize-wrapper {
+  background-image: url('/assets/images/沙子.svg');
+  padding: 60px 0 45px 0;
+  margin-top: 30px;
+  display: flex;
+}
+
+.prize-container {
+  width: 100%;
+  margin: 0 21px;
+  display: grid;
+  grid-template-columns: $cardWidth $cardWidth;
+  grid-gap: 41px 16px;
+}
+
+@media only screen and (min-width: 630px) {
+  .prize-container {
+    width: 630px;
+    grid-template-columns: $cardWidth $cardWidth $cardWidth;
+  }
+}
