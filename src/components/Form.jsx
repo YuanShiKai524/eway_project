@@ -4,18 +4,24 @@ import { nanoid } from 'nanoid';
 const Form = () => {
   // 所有input輸入框的狀態
   const [inputs, setInputs] = useState({
-    store: { value: '', errMsg: '', invaild: false },
-    name: { value: '', errMsg: '', invaild: false },
-    phone: { value: '', errMsg: '', invaild: false },
-    consumption: { value: '', errMsg: '', invaild: false },
-    payment: { value: 'digital payment', errMsg: '', invaild: false },
+    store: { value: '', errMsg: '', invalid: false },
+    name: { value: '', errMsg: '', invalid: false },
+    phone: { value: '', errMsg: '', invalid: false },
+    consumption: { value: '', errMsg: '', invalid: false },
+    payment: { value: 'digital payment', errMsg: '', invalid: false },
   });
 
   // 定義store欄位及payment欄位的options，便於使用
   const storeOptions = ['store1', 'store2', 'store3', 'store113', 'store223'];
   const paymentOptions = ['digital payment', 'ATM'];
 
-  // 檢查store中用戶的輸入值，返回過濾結果
+  // 欄位驗證格式
+  const namePattern =
+    /(^[\u4e00-\u9fa5]{2,4}$|^[a-zA-Z]+$|^[a-zA-Z]+[\s]{1}[a-zA-Z]+$)/;
+  const phonePattern = /^09[0-9]{8}$/;
+  const consumptionPattern = /^[0]{1}$|^[1-9]+[0-9]*$/;
+
+  // (在onChange事件中)檢查store中用戶的輸入值，並返回過濾結果
   const checkStore = (event) => {
     const results = storeOptions.filter((option) => {
       return option.indexOf(event.target.value) !== -1;
@@ -28,20 +34,8 @@ const Form = () => {
     if (event.target.value === '') {
       setInputs({
         ...inputs,
-        [type]: { value: event.target.value, errMsg: '', invaild: false },
+        [type]: { value: event.target.value, errMsg: '', invalid: false },
       });
-      // if (type === 'store') {
-      //   setInputs({
-      //     ...inputs,
-      //     [type]: { value: event.target.value, errMsg: '', invaild: false },
-      //   });
-      // }
-      // if (type !== 'store') {
-      //   setInputs({
-      //     ...inputs,
-      //     [type]: { ...inputs[type], value: event.target.value },
-      //   });
-      // }
     }
     if (event.target.value !== '') {
       // 若store欄位中有輸入值，則檢查輸入的值是否有在options中
@@ -53,7 +47,7 @@ const Form = () => {
             [type]: {
               value: event.target.value,
               errMsg: 'no result',
-              invaild: true,
+              invalid: true,
             },
           });
         }
@@ -63,7 +57,7 @@ const Form = () => {
             [type]: {
               value: event.target.value,
               errMsg: '',
-              invaild: false,
+              invalid: false,
             },
           });
         }
@@ -74,7 +68,7 @@ const Form = () => {
           [type]: {
             value: event.target.value,
             errMsg: '',
-            invaild: false,
+            invalid: false,
           },
         });
       }
@@ -124,7 +118,7 @@ const Form = () => {
     const newInputs = {};
     for (const [key, valObj] of Object.entries(inputs)) {
       if (valObj.value === '') {
-        newInputs[key] = { ...valObj, errMsg: 'required', invaild: true };
+        newInputs[key] = { ...valObj, errMsg: 'required', invalid: true };
       }
       if (valObj.value !== '') {
         newInputs[key] = valObj;
@@ -133,30 +127,91 @@ const Form = () => {
     return newInputs;
   };
 
-  // 提交後，驗證name格式
-  const checkName = (inputsObj) => {
+  // 提交後，驗證各欄位格式是否正確
+  const validate = (inputsObj) => {
+    // 將各欄位之值，取出並賦予至變數
+    const store = inputsObj.store.value;
     const name = inputsObj.name.value;
-    if (name !== '') {
-      const result =
-        /(^[\u4e00-\u9fa5]{2,4}$|^[a-zA-Z]+$|^[a-zA-Z]+[\s]{1}[a-zA-Z]+$)/.test(
-          name
-        );
-      if (!result) {
-        return {
-          ...inputsObj,
-          name: { ...inputsObj.name, errMsg: 'wrong format', invaild: true },
-        };
+    const phone = inputsObj.phone.value;
+    const consumption = inputsObj.consumption.value;
+    const payment = inputsObj.payment.value;
+    // 創建一個用於遍歷的array
+    const dataArr = [
+      {
+        type: 'store',
+        value: store,
+        pattern: storeOptions,
+        errMsg: 'no result',
+      },
+      {
+        type: 'name',
+        value: name,
+        pattern: namePattern,
+        errMsg: 'wrong format',
+      },
+      {
+        type: 'phone',
+        value: phone,
+        pattern: phonePattern,
+        errMsg: 'wrong format',
+      },
+      {
+        type: 'consumption',
+        value: consumption,
+        pattern: consumptionPattern,
+        errMsg: 'wrong format',
+      },
+      {
+        type: 'payment',
+        value: payment,
+        pattern: paymentOptions,
+        errMsg: 'wrong format',
+      },
+    ];
+    // 創建用於更新inputs的object
+    const newInputsObj = {};
+    // 用forEach方法進行循環操作
+    dataArr.forEach((dataObj) => {
+      const { type, value, pattern, errMsg } = dataObj;
+      if (value !== '') {
+        if (type === 'store' || type === 'payment') {
+          const results = pattern.filter((p) => {
+            return p === value;
+          });
+          if (results.length === 0) {
+            newInputsObj[type] = {
+              value,
+              errMsg,
+              invalid: true,
+            };
+          } else {
+            newInputsObj[type] = { ...inputsObj[type] };
+          }
+        } else {
+          const result = pattern.test(value);
+          if (!result) {
+            newInputsObj[type] = {
+              value,
+              errMsg,
+              invalid: true,
+            };
+          } else {
+            newInputsObj[type] = { ...inputsObj[type] };
+          }
+        }
+      } else {
+        newInputsObj[type] = { ...inputsObj[type] };
       }
-    }
-    return inputsObj;
+    });
+    // 最後返回最終結果的object
+    return newInputsObj;
   };
 
   // 處理提交的函數
   const handleSubmit = (e) => {
     e.preventDefault();
     // 驗證輸入欄錯誤有以下幾種情況: 該填未填required, 各state的wrong format
-    let newInputs = checkEmptyInput();
-    newInputs = checkName(newInputs);
+    const newInputs = validate(checkEmptyInput());
     setInputs(newInputs);
   };
 
@@ -167,7 +222,7 @@ const Form = () => {
         <>
           {field.label === 'store' ? (
             <input
-              className={inputs[field.name].invaild ? 'error' : ''}
+              className={inputs[field.name].invalid ? 'error' : ''}
               list={field.list}
               name={field.label}
               placeholder={field.placeholder}
@@ -175,7 +230,7 @@ const Form = () => {
             />
           ) : (
             <input
-              className={inputs[field.name].invaild ? 'error' : ''}
+              className={inputs[field.name].invalid ? 'error' : ''}
               list={field.list}
               name={field.label}
               defaultValue={field.defaultValue}
@@ -194,7 +249,7 @@ const Form = () => {
     }
     return (
       <input
-        className={inputs[field.name].invaild ? 'error' : ''}
+        className={inputs[field.name].invalid ? 'error' : ''}
         name={field.label}
         placeholder={field.placeholder}
         onChange={field.onChange}
@@ -224,7 +279,7 @@ const Form = () => {
               <span>&#042;</span>
             </div>
             {getElements(field)}
-            {inputs[field.name].invaild === false ? (
+            {inputs[field.name].invalid === false ? (
               <div className="caption errMsg" style={{ display: 'none' }}>
                 {inputs[field.name].errMsg}
               </div>
