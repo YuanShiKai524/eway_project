@@ -343,10 +343,9 @@ form label input::-webkit-calendar-picker-indicator {
   display: none !important;
 }
 @media only screen and (max-width: 600px) {
-  form label input[name=phone],
+  form label input[inputMode=none],
   form label input[type=text] {
-    type: "number";
-    inputmode: "numeric";
+    inputMode: "numeric";
   }
 }
 form label .errMsg {
