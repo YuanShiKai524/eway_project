@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.581f6e00.js",
-    "index.html": "/index.html",
-    "main.581f6e00.js.map": "/static/js/main.581f6e00.js.map"
+    "main.js": "/eway_project/static/js/main.581f6e00.js",
+    "index.html": "/eway_project/index.html",
+    "main.581f6e00.js.map": "/eway_project/static/js/main.581f6e00.js.map"
   },
   "entrypoints": [
     "static/js/main.581f6e00.js"
