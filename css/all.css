@@ -316,14 +316,14 @@ form label {
 form label:nth-child(2) > input, form label:nth-child(6) > input {
   background-image: url("../assets/images/drop_down.svg");
   background-repeat: no-repeat;
-  background-position: calc(100% - 15px) 48%;
+  background-position: calc(100% - 9px) 48%;
   cursor: pointer;
 }
 form label:nth-child(2) > input.error, form label:nth-child(2) > input:focus {
-  background-position: calc(100% - 13px) 47.5%;
+  background-position: calc(100% - 7px) 47.5%;
 }
 form label:nth-child(6) > input.error, form label:nth-child(6) > input:focus {
-  background-position: calc(100% - 13px) 47.8%;
+  background-position: calc(100% - 7px) 47.8%;
 }
 form label div {
   color: #204379;
@@ -341,7 +341,7 @@ form label input::placeholder {
 }
 form label input::-webkit-calendar-picker-indicator {
   display: none !important;
-  opacity: 0 !important;
+  opacity: transparent !important;
   -webkit-appearance: none !important;
 }
 form label .errMsg {
