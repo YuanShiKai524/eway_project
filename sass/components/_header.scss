@@ -1,8 +1,8 @@
 @use '../helpers/variables';
 
 .header-container {
-  background-image: url('/assets/images/白色海浪.svg'),
-    url('/assets/images/底色.svg');
+  background-image: url('../assets/images/白色海浪.svg'),
+    url('../assets/images/底色.svg');
   background-position: center;
   background-size: 350% 80%;
   background-repeat: no-repeat, no-repeat;
@@ -89,7 +89,7 @@
 
 .wave {
   height: 110px;
-  background-image: url('/assets/images/海浪.svg'), linear-gradient(to bottom, $primaryColor1 50%, $primaryColor4 50%);
+  background-image: url('../assets/images/海浪.svg'), linear-gradient(to bottom, $primaryColor1 50%, $primaryColor4 50%);
   background-repeat: repeat-x;
   background-position-y: bottom;
   overflow: hidden;
