@@ -117,8 +117,9 @@ form {
 
     @media only screen and (max-width: 600px) {
       input[name="phone"],
-      input[name="consumption"] {
-        inputmode: "numeric";
+      input[type="text"] {
+        type: "number";
+        inputmode: 'numeric';
       }
     }
 

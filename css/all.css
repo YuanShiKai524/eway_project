@@ -344,7 +344,8 @@ form label input::-webkit-calendar-picker-indicator {
 }
 @media only screen and (max-width: 600px) {
   form label input[name=phone],
-  form label input[name=consumption] {
+  form label input[type=text] {
+    type: "number";
     inputmode: "numeric";
   }
 }
