@@ -7,7 +7,7 @@ const Market = () => {
         <div>Neque porro quisquam</div>
         <div>est qui dolorem!</div>
       </div>
-      <img src="/assets/images/market.svg" alt="market" />
+      <img src="./assets/images/market.svg" alt="market" />
     </div>
   );
 };

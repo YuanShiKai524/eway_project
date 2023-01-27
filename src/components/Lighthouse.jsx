@@ -12,7 +12,7 @@ const Lighthouse = () => {
         </div>
         <div className="slash" />
       </div>
-      <img src="/assets/images/lighthouse.svg" alt="lighthouse" />
+      <img src="./assets/images/lighthouse.svg" alt="lighthouse" />
     </div>
   );
 };

@@ -5,9 +5,9 @@ const Paragraph = ({ contents, style }) => {
   return (
     <div className="paragraph">
       <div className="title">
-        <img src="/assets/images/cactus.svg" alt="cactus" />
+        <img src="./assets/images/cactus.svg" alt="cactus" />
         <h5>paragraph</h5>
-        <img src="/assets/images/cactus.svg" alt="cactus" />
+        <img src="./assets/images/cactus.svg" alt="cactus" />
       </div>
       <ol start="1" style={style || {}}>
         {contents.map((content) => {

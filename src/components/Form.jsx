@@ -84,24 +84,28 @@ const Form = () => {
       onChange: (event) => handleChange('store', event),
       list: 'stores',
       options: storeOptions,
+      inputMode: 'text',
     },
     {
       label: 'name',
       name: 'name',
       placeholder: 'John Doe',
       onChange: (event) => handleChange('name', event),
+      inputMode: 'text',
     },
     {
       label: 'phone',
       name: 'phone',
       placeholder: '0910777888',
       onChange: (event) => handleChange('phone', event),
+      inputMode: 'tel',
     },
     {
       label: 'Amount of consumption',
       name: 'consumption',
       placeholder: '10000',
       onChange: (event) => handleChange('consumption', event),
+      inputMode: 'numeric',
     },
     {
       label: 'payment',
@@ -110,6 +114,7 @@ const Form = () => {
       onChange: (event) => handleChange('payment', event),
       list: 'payments',
       options: paymentOptions,
+      inputMode: 'text',
     },
   ];
 
@@ -227,6 +232,7 @@ const Form = () => {
               name={field.label}
               placeholder={field.placeholder}
               onChange={field.onChange}
+              inputMode={field.inputMode}
             />
           ) : (
             <input
@@ -235,6 +241,7 @@ const Form = () => {
               name={field.label}
               defaultValue={field.defaultValue}
               onChange={field.onChange}
+              inputMode={field.inputMode}
             />
           )}
           <datalist id={field.list}>
@@ -253,6 +260,7 @@ const Form = () => {
         name={field.label}
         placeholder={field.placeholder}
         onChange={field.onChange}
+        inputMode={field.inputMode}
       />
     );
   };
@@ -270,7 +278,7 @@ const Form = () => {
           <div>
             <h5>ＦＯＲＭ</h5>
           </div>
-          <img src="/assets/images/turtle.svg" alt="turtle" />
+          <img src="./assets/images/turtle.svg" alt="turtle" />
         </div>
         {fields.map((field) => (
           <label htmlFor={field.label} key={field.label}>
@@ -290,7 +298,7 @@ const Form = () => {
         ))}
       </form>
       <button type="submit" form="myForm">
-        <img src="/assets/images/submit.svg" alt="submit button" />
+        <img src="./assets/images/submit.svg" alt="submit button" />
       </button>
     </div>
   );

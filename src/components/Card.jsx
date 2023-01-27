@@ -6,7 +6,10 @@ const Card = ({ prize }) => {
       {prize.isTopThree ? (
         <>
           <div className="badge">
-            <img src="/assets/images/certificateA.svg" alt="Top three prizes" />
+            <img
+              src="./assets/images/certificateA.svg"
+              alt="Top three prizes"
+            />
             <div className="prize-level">{prize.id}</div>
           </div>
           <div className="caption quantity">{prize.quantity}</div>
@@ -17,7 +20,10 @@ const Card = ({ prize }) => {
       ) : (
         <>
           <div className="badge">
-            <img src="/assets/images/certificateD.svg" alt="Top three prizes" />
+            <img
+              src="./assets/images/certificateD.svg"
+              alt="Top three prizes"
+            />
             <div className="prize-level">{prize.id}</div>
           </div>
           <div className="caption quantity-silver">{prize.quantity}</div>

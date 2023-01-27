@@ -47,18 +47,18 @@ const Header = () => {
           <h2>who loves pain</h2>
         </div>
         <div className="btn-goToForm" onClick={scrollToForm}>
-          <img src="/assets/images/form.svg" alt="go-to-form" />
+          <img src="./assets/images/form.svg" alt="go-to-form" />
         </div>
         <div className="container paragraphs-container">
           <div className="supBubble-container">
             <img
-              src="/assets/images/小泡泡.svg"
+              src="./assets/images/小泡泡.svg"
               alt="小泡泡"
               className="bubble-sm"
             />
-            <img src="/assets/images/泡泡.svg" alt="泡泡" className="bubble" />
-            <img src="/assets/images/sup.svg" alt="sup" className="sup" />
-            <img src="/assets/images/船槳.svg" alt="船槳" className="oar" />
+            <img src="./assets/images/泡泡.svg" alt="泡泡" className="bubble" />
+            <img src="./assets/images/sup.svg" alt="sup" className="sup" />
+            <img src="./assets/images/船槳.svg" alt="船槳" className="oar" />
           </div>
           {paragraphs.map((content, index) =>
             index !== paragraphs.length - 1 ? (
@@ -73,12 +73,12 @@ const Header = () => {
           )}
           <div className="supFirework-container">
             <img
-              src="/assets/images/sup煙火.svg"
+              src="./assets/images/sup煙火.svg"
               alt="sup煙火"
               className="supFirework"
             />
             <img
-              src="/assets/images/煙火.svg"
+              src="./assets/images/煙火.svg"
               alt="煙火"
               className="firework"
             />
