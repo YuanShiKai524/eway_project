@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/eway_project/static/js/main.5ecaf77f.js",
+    "main.js": "/eway_project/static/js/main.10a1e73c.js",
     "index.html": "/eway_project/index.html",
-    "main.5ecaf77f.js.map": "/eway_project/static/js/main.5ecaf77f.js.map"
+    "main.10a1e73c.js.map": "/eway_project/static/js/main.10a1e73c.js.map"
   },
   "entrypoints": [
-    "static/js/main.5ecaf77f.js"
+    "static/js/main.10a1e73c.js"
   ]
 }

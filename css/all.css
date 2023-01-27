@@ -130,7 +130,7 @@ input {
   }
 }
 .header-container {
-  background-image: url("/assets/images/白色海浪.svg"), url("/assets/images/底色.svg");
+  background-image: url("../../assets/images/白色海浪.svg"), url("../../assets/images/底色.svg");
   background-position: center;
   background-size: 350% 80%;
   background-repeat: no-repeat, no-repeat;
@@ -212,7 +212,7 @@ input {
 
 .wave {
   height: 110px;
-  background-image: url("/assets/images/海浪.svg"), linear-gradient(to bottom, #204379 50%, #E2D9D3 50%);
+  background-image: url("../../assets/images/海浪.svg"), linear-gradient(to bottom, #204379 50%, #E2D9D3 50%);
   background-repeat: repeat-x;
   background-position-y: bottom;
   overflow: hidden;
@@ -314,7 +314,7 @@ form label {
   position: relative;
 }
 form label:nth-child(2) > input, form label:nth-child(6) > input {
-  background-image: url("/assets/images/drop down.svg");
+  background-image: url("../../assets/images/drop_down.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 18px) 48%;
   cursor: pointer;
@@ -342,12 +342,6 @@ form label input::placeholder {
 form label input::-webkit-calendar-picker-indicator {
   display: none !important;
 }
-@media only screen and (max-width: 600px) {
-  form label input[inputMode=none],
-  form label input[type=text] {
-    inputMode: "numeric";
-  }
-}
 form label .errMsg {
   color: #E06D6D;
   position: absolute;
@@ -373,7 +367,7 @@ button {
 }
 
 .prize-wrapper {
-  background-image: url("/assets/images/沙子.svg");
+  background-image: url("../../assets/images/沙子.svg");
   padding: 60px 0 45px 0;
   margin-top: 30px;
   display: flex;
