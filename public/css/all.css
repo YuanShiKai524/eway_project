@@ -296,7 +296,7 @@ form .formTitle-container div {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 123px;
+  width: 126px;
   height: 43px;
   padding: 10px 15px;
   box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
@@ -308,7 +308,7 @@ form .formTitle-container div h5 {
 }
 form .formTitle-container img {
   top: -10px;
-  left: 100px;
+  left: 103.5px;
 }
 form label {
   position: relative;
@@ -319,10 +319,10 @@ form label:nth-child(2) > input, form label:nth-child(6) > input {
   background-position: calc(100% - 18px) 48%;
   cursor: pointer;
 }
-form label:nth-child(2) > input:focus {
+form label:nth-child(2) > input.error, form label:nth-child(2) > input:focus {
   background-position: calc(100% - 16px) 47.5%;
 }
-form label:nth-child(7) > input:focus {
+form label:nth-child(6) > input.error, form label:nth-child(6) > input:focus {
   background-position: calc(100% - 16px) 47.8%;
 }
 form label div {
@@ -340,7 +340,9 @@ form label input::placeholder {
   color: #bdbdbd;
 }
 form label input::-webkit-calendar-picker-indicator {
-  opacity: 0;
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none !important;
 }
 form label .errMsg {
   color: #E06D6D;
