@@ -13,6 +13,18 @@
   border-radius: 20px;
 }
 
+%button-basic {
+  width: 200px;
+  height: 57px;
+  background-color: $primaryColor2;
+  box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35),
+    0px -4px 10px rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  padding: 16px 20px;
+  margin: 14px auto 18px auto;
+  letter-spacing: 0.4em;
+}
+
 .formComponent-container,
 form,
 input {
@@ -80,7 +92,6 @@ form {
       background-image: url('../assets/images/drop_down.svg');
       background-repeat: no-repeat;
       background-position: calc(100% - 9px) 48%;
-      cursor: pointer;
     }
 
     &:nth-child(2) > input.error,
@@ -134,8 +145,44 @@ form {
 }
 
 button {
-  width: fit-content;
-  background-color: inherit;
-  margin: 0 auto;
+  @extend %button-basic;
+  color: $white;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &.success,
+  &.failure {
+    position: relative;
+
+    img,
+    h5 {
+      position: absolute;
+      top: 17.5px;
+    }
+
+    img {
+      left: 35px;
+    }
+
+    h5 {
+      right: 35px;
+    }
+  }
+
+  &.success {
+    @extend %button-basic;
+    color: #e6ffb1;
+  }
+
+  &.failure {
+    @extend %button-basic;
+    color: #ffe3e3;
+  }
+
+  &.pressed {
+    opacity: 0.6;
+  }
 }
