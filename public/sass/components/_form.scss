@@ -162,6 +162,24 @@ button {
       position: absolute;
       top: 17.5px;
     }
+  }
+
+  &.success {
+    @extend %button-basic;
+    color: #e6ffb1;
+    
+    img {
+      left: 32px;
+    }
+
+    h5 {
+      right: 30px;
+    }
+  }
+
+  &.failure {
+    @extend %button-basic;
+    color: #ffe3e3;
 
     img {
       left: 35px;
@@ -170,16 +188,6 @@ button {
     h5 {
       right: 35px;
     }
-  }
-
-  &.success {
-    @extend %button-basic;
-    color: #e6ffb1;
-  }
-
-  &.failure {
-    @extend %button-basic;
-    color: #ffe3e3;
   }
 
   &.pressed {

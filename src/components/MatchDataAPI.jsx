@@ -3,10 +3,13 @@ const MatchDataAPI = async (inputs) => {
   const customers = await response.json();
   const matchedResults = customers.filter((customer) => {
     const name = inputs.name.value;
-    const phone = inputs.name.value;
-    const payment = inputs.name.value;
-    const { CName, CPhone, CPayment } = customer;
-    return name === CName && phone === CPhone && payment === CPayment;
+    const phone = inputs.phone.value;
+    const payment = inputs.payment.value;
+    return (
+      name === customer.name &&
+      phone === customer.phone &&
+      payment === customer.payment
+    );
   });
   return matchedResults;
 };

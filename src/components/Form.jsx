@@ -288,18 +288,17 @@ const Form = () => {
       isSubmittedChanger();
       // 如果驗證後的inputs沒問題，submit用戶輸入的資料，藉由api發送請求，並匹配用戶輸入的資料是否存在，存在則成功，反之則失敗
       const matchedResults = await matchData(newInputs);
+      // console.log(matchedResults);
       // 若有返回匹配後的結果，且array中有顧客資料，則顯示成功
-      setTimeout(() => {
-        if (matchedResults && matchedResults.length !== 0) {
-          setIsSuccess(true);
-        } else {
-          // 反之，則顯示失敗樣式
-          setIsSuccess(false);
-        }
-        setHasResults(true);
-        setIsMatching(false);
-        setInputs(newInputs);
-      }, 3000);
+      if (matchedResults && matchedResults.length !== 0) {
+        setIsSuccess(true);
+      } else {
+        // 反之，則顯示失敗樣式
+        setIsSuccess(false);
+      }
+      setHasResults(true);
+      setIsMatching(false);
+      setInputs(newInputs);
     }
   };
 

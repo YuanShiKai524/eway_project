@@ -382,17 +382,23 @@ button.failure h5 {
   position: absolute;
   top: 17.5px;
 }
-button.success img, button.failure img {
-  left: 35px;
-}
-button.success h5, button.failure h5 {
-  right: 35px;
-}
 button.success {
   color: #e6ffb1;
 }
+button.success img {
+  left: 32px;
+}
+button.success h5 {
+  right: 30px;
+}
 button.failure {
   color: #ffe3e3;
+}
+button.failure img {
+  left: 35px;
+}
+button.failure h5 {
+  right: 35px;
 }
 button.pressed {
   opacity: 0.6;
