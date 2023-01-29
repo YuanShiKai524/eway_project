@@ -388,15 +388,29 @@ const Form = () => {
           </label>
         ))}
       </form>
-      <button
-        type="submit"
-        form="myForm"
-        disabled={isMatching}
-        style={hasResults ? { cursor: 'auto' } : {}}
-        className={determineSubmitBtnClass()}
-      >
-        {submitBtnDisplayer()}
-      </button>
+      <div className="submitBtnSection">
+        <button
+          type="submit"
+          form="myForm"
+          disabled={isMatching}
+          style={hasResults ? { cursor: 'auto' } : {}}
+          className={determineSubmitBtnClass()}
+        >
+          {submitBtnDisplayer()}
+        </button>
+        <div className="failureMsg-container">
+          <div
+            className="failureMsg"
+            style={
+              hasResults && isSuccess === false
+                ? { display: 'block' }
+                : { display: 'none' }
+            }
+          >
+            This person does not exist
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

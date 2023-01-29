@@ -29,3 +29,10 @@
   @include f-s14w500;
   line-height: 150%;
 }
+
+// input 14px R
+@mixin input14R {
+  @include fw-400;
+  font-size: 14px;
+  line-height: 150%;
+}
