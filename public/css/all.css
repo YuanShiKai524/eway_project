@@ -184,6 +184,23 @@ input {
   position: absolute;
 }
 
+@keyframes shaking {
+  0% {
+    top: 10px;
+    left: 20px;
+    rotate: 0deg;
+  }
+  50% {
+    top: 10px;
+    left: 15px;
+    rotate: 20deg;
+  }
+  100% {
+    top: 10px;
+    left: 20px;
+    rotate: 0deg;
+  }
+}
 .supBubble-container {
   top: -28px;
   right: 70px;
@@ -191,6 +208,7 @@ input {
 .supBubble-container .oar {
   top: 10px;
   left: 20px;
+  animation: shaking 3s linear infinite;
 }
 .supBubble-container .bubble-sm {
   top: -50px;
