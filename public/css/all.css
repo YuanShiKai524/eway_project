@@ -373,12 +373,34 @@ form label .errMsg {
   flex-direction: column;
 }
 
+.mt29mb49 {
+  margin: 29px 0 49px 0;
+}
+
+@keyframes respiration {
+  0% {
+    width: 200px;
+    height: 57px;
+  }
+  50% {
+    width: 210px;
+    height: 67px;
+  }
+  100% {
+    width: 200px;
+    height: 57px;
+  }
+}
 button {
   color: #FFFFFF;
   cursor: pointer;
 }
 button:disabled {
   cursor: not-allowed;
+}
+button.origin {
+  animation: respiration 3s linear infinite;
+  position: absolute;
 }
 button.success, button.failure {
   position: relative;

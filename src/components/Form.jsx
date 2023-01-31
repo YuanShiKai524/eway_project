@@ -159,7 +159,7 @@ const Form = () => {
     if (hasResults) {
       return isSuccess ? 'success' : 'failure';
     }
-    return isSubmitted ? 'pressed' : '';
+    return isSubmitted ? 'pressed' : 'origin';
   };
 
   // 此函數用於將之前的結果清除 (使submit樣式回到未獲得資料前)
@@ -388,7 +388,13 @@ const Form = () => {
           </label>
         ))}
       </form>
-      <div className="submitBtnSection">
+      <div
+        className={
+          isSubmitted === false
+            ? 'submitBtnSection mt29mb49'
+            : 'submitBtnSection'
+        }
+      >
         <button
           type="submit"
           form="myForm"
