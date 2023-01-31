@@ -255,6 +255,20 @@ input {
   animation: bubble 2.5s linear infinite;
 }
 
+@keyframes firework {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5, 1.5);
+    opacity: 0.1;
+  }
+}
 .supFirework-container {
   bottom: 31px;
   left: 8px;
@@ -262,6 +276,7 @@ input {
 .supFirework-container .firework {
   top: 20px;
   left: -28px;
+  animation: firework 2s linear infinite;
 }
 
 .wave {
