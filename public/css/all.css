@@ -201,6 +201,40 @@ input {
     rotate: 0deg;
   }
 }
+@keyframes bubble-sm {
+  0% {
+    top: -30px;
+    right: -60px;
+    opacity: 0.2;
+  }
+  50% {
+    top: -40px;
+    right: -65px;
+    opacity: 1;
+  }
+  100% {
+    top: -50px;
+    right: -60px;
+    opacity: 0.4;
+  }
+}
+@keyframes bubble {
+  0% {
+    top: -10px;
+    right: -50px;
+    opacity: 0.2;
+  }
+  50% {
+    top: -20px;
+    right: -45px;
+    opacity: 1;
+  }
+  100% {
+    top: -30px;
+    right: -50px;
+    opacity: 0.4;
+  }
+}
 .supBubble-container {
   top: -28px;
   right: 70px;
@@ -213,10 +247,12 @@ input {
 .supBubble-container .bubble-sm {
   top: -50px;
   right: -60px;
+  animation: bubble-sm 2.5s linear infinite;
 }
 .supBubble-container .bubble {
   top: -30px;
   right: -50px;
+  animation: bubble 2.5s linear infinite;
 }
 
 .supFirework-container {
