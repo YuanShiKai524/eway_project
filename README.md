@@ -5,8 +5,40 @@
 
 網站已部屬至github pages，請由以下網址前往查看
 
-    // test
+    https://yuanshikai524.github.io/eway_project/
 
+
+
+表單驗證用的顧客資料在data資料夾中，但為了方便查看，以下提供部分顧客數據，
+用以快速的輸入資料並測試驗證功能(amount of consumption選項請輸入任意正確格式的值即可)
+
+    store1：
+      "name": "Thomas Jimmy",
+      "phone": "0967588922",
+      "payment": "digital payment"
+
+      "name": "羅志清",
+      "phone": "0912445778",
+      "payment": "ATM"
+
+    store3：
+      "name": "Hughes Mario",
+      "phone": "0920555444",
+      "payment": "ATM"
+
+      "name": "張三",
+      "phone": "0923833755",
+      "payment": "digital payment"
+
+    store223：
+      "name": "Johnson Wicky",
+      "phone": "0973255611",
+      "payment": "ATM"
+
+      "name": "林峰",
+      "phone": "0999111333",
+      "payment": "digital payment"
+      
 
 資料夾結構：
 
@@ -46,5 +78,5 @@ public中資料夾結構：
       |--/components      存放各組件單獨使用的樣式之目錄(底下的每個scss檔案皆對應相同檔案名稱之組件)
       |--/helpers         存放mixin、variables之scss目錄
       |--/layout          存放排版架構之scss目錄
-        |--_grid.scss     裡面以RWD去控制Header組件、Form組件皆用到的容器寬度(根據螢幕寬度大小不同，調節其可用寬度)
+        |--_grid.scss     裡面以RWD去控制Header組件、Form組件、Prize組件皆用到的容器寬度(根據螢幕寬度大小不同，調節其可用寬度)
       |--all.scss         引用所有scss檔案並編譯成css的檔案
