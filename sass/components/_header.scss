@@ -12,7 +12,7 @@
   align-items: center;
   padding: 60px 24px 8px;
   width: 100%;
-  min-height: 584px; // 暫定height
+  min-height: 584px;
 }
 
 .slogan-container > h2 {
@@ -26,9 +26,42 @@
   }
 }
 
+@keyframes rainbow {
+  0%{ background-position: 0 0; }
+  50%{ background-position: 400% 0; }
+  100%{ background-position: 0 0; }
+}
+
 .btn-goToForm {
-  margin: 10px 0;
+  margin: 14px 0;
   height: 100px;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: url('../assets/images/form.svg');
+    position: absolute;
+    left: -120px;
+    width: 240px;
+    height: 100px;
+    z-index: 1;
+  }
+
+  &:after {
+    display: inline-block;
+    content: "";
+    background: linear-gradient(124deg,#efdbc8, #e9c87f, #b2e1ea, #90cae5, #f5caf4, #dfc9f9);
+    background-size: 400%;
+    width: 210px;
+    height: 68px;
+    border-radius: 30px;
+    filter: blur(5px);
+    position: absolute;
+    left: -105px;
+    top: 14px;
+    transition: all 0.3s ease-in-out;
+    animation: rainbow 20s linear infinite;
+  }
 }
 
 .btn-goToForm:hover {
@@ -57,6 +90,60 @@
   position: absolute;
 }
 
+@keyframes shaking {
+  0% {
+    top: 10px;
+    left: 20px;
+    rotate: 0deg;
+  }
+  50% {
+    top: 10px;
+    left: 15px;
+    rotate: 20deg;
+  }
+  100% {
+    top: 10px;
+    left: 20px;
+    rotate: 0deg;
+  }
+}
+
+@keyframes bubble-sm {
+  0% {
+    top: -30px;
+    right: -60px;
+    opacity: 0.2;
+  }
+  50% {
+    top: -40px;
+    right: -65px;
+    opacity: 1;
+  }
+  100% {
+    top: -50px;
+    right: -60px;
+    opacity: 0.4;
+  }
+}
+
+@keyframes bubble {
+  0% {
+    top: -10px;
+    right: -50px;
+    opacity: 0.2;
+  }
+  50% {
+    top: -20px;
+    right: -45px;
+    opacity: 1;
+  }
+  100% {
+    top: -30px;
+    right: -50px;
+    opacity: 0.4;
+  }
+}
+
 .supBubble-container {
   top: -28px;
   right: 70px;
@@ -64,35 +151,73 @@
   .oar {
     top: 10px;
     left: 20px;
+    animation: shaking 3s linear infinite;
   }
 
   .bubble-sm {
     top: -50px;
     right: -60px;
+    animation: bubble-sm 2.5s linear infinite;
   }
 
   .bubble {
     top: -30px;
     right: -50px;
+    animation: bubble 2.5s linear infinite;
+  }
+}
+
+@keyframes firework {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5, 1.5);
+    opacity: 0.1;
   }
 }
 
 .supFirework-container {
   bottom: 31px;
   left: 8px;
+  z-index: 1;
 
   .firework {
     top: 20px;
     left: -28px;
+    animation: firework 2s linear infinite;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
 .wave {
   height: 110px;
-  background-image: url('../assets/images/海浪.svg'), linear-gradient(to bottom, $primaryColor1 50%, $primaryColor4 50%);
+  background-image: url('../assets/images/海浪.svg'),
+    linear-gradient(to bottom, $primaryColor1 50%, $primaryColor4 50%);
   background-repeat: repeat-x;
   background-position-y: bottom;
   overflow: hidden;
   box-sizing: unset;
   padding-top: 40px;
+  animation: wave 5s linear infinite;
+
+  width: 200%;
+  // background-position: left bottom;
+  transform-origin: left bottom;
 }
