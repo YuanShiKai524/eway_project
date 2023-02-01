@@ -82,9 +82,23 @@ form {
       }
     }
 
+    @keyframes swimming {
+      0% {top: 50px; left: 303.5px;}
+      15% {top: -10px; left: 153.5px; rotate: 20deg;}
+      20% {top: -60px; left: 123.5px; rotate: 40deg;}
+      30% {top: -160px; left: 143.5px; rotate: 92deg;}
+      40% {top: -200px; left: 233.5px; rotate: 130deg;}
+      50% {top: -170px; left: 403.5px;  rotate: 210deg;}
+      60% {top: -30px; left: 373.5px; rotate: 320deg;}
+      75% {top: 10px; left: 253.5px; rotate: 340deg;}
+      90% {top: -10px; left: 103.5px; rotate: 360deg;}
+      100% {top: -10px; left: 103.5px; rotate: 360deg;}
+    }
+
     img {
       top: -10px;
       left: 103.5px;
+      animation: swimming 8s linear infinite backwards 1s;
     }
   }
 
