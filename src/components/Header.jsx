@@ -46,9 +46,7 @@ const Header = () => {
           <h2>There is no one</h2>
           <h2>who loves pain</h2>
         </div>
-        <div className="btn-goToForm" onClick={scrollToForm}>
-          <img src="./assets/images/form.svg" alt="go-to-form" />
-        </div>
+        <div className="btn-goToForm" onClick={scrollToForm} />
         <div className="container paragraphs-container">
           <div className="supBubble-container">
             <img

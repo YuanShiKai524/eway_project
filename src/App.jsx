@@ -7,7 +7,7 @@ import Market from './components/Market';
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <Header />
       <Form />
       <Prize />

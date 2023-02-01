@@ -129,6 +129,10 @@ input {
     width: 808px;
   }
 }
+.app {
+  overflow: hidden;
+}
+
 .header-container {
   background-image: url("../assets/images/白色海浪.svg"), url("../assets/images/底色.svg");
   background-position: center;
@@ -153,9 +157,45 @@ input {
   margin-top: 4px;
 }
 
+@keyframes rainbow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 .btn-goToForm {
-  margin: 10px 0;
+  margin: 14px 0;
   height: 100px;
+  position: relative;
+}
+.btn-goToForm::before {
+  content: "";
+  background: url("../assets/images/form.svg");
+  position: absolute;
+  left: -120px;
+  width: 240px;
+  height: 100px;
+  z-index: 1;
+}
+.btn-goToForm:after {
+  display: inline-block;
+  content: "";
+  background: linear-gradient(124deg, #efdbc8, #e9c87f, #b2e1ea, #90cae5, #f5caf4, #dfc9f9);
+  background-size: 400%;
+  width: 210px;
+  height: 68px;
+  border-radius: 30px;
+  filter: blur(5px);
+  position: absolute;
+  left: -105px;
+  top: 14px;
+  transition: all 0.3s ease-in-out;
+  animation: rainbow 20s linear infinite;
 }
 
 .btn-goToForm:hover {
@@ -272,6 +312,7 @@ input {
 .supFirework-container {
   bottom: 31px;
   left: 8px;
+  z-index: 1;
 }
 .supFirework-container .firework {
   top: 20px;
@@ -279,6 +320,17 @@ input {
   animation: firework 2s linear infinite;
 }
 
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .wave {
   height: 110px;
   background-image: url("../assets/images/海浪.svg"), linear-gradient(to bottom, #204379 50%, #E2D9D3 50%);
@@ -287,6 +339,9 @@ input {
   overflow: hidden;
   box-sizing: unset;
   padding-top: 40px;
+  animation: wave 5s linear infinite;
+  width: 200%;
+  transform-origin: left bottom;
 }
 
 .paragraph, .title {
